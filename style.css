@@ -16,11 +16,15 @@ body {
   top: 20px;
   left: 20px;
   bottom: 20px;
-  width: 300px;
+  width: 60px;
   border-radius: 10px;
   background-color: #4d5bf9;
   border-left: 10px solid #4d5bf9;
   transition: 0.5s;
+  overflow-x: hidden;
+}
+.navigation.active {
+  width: 300px;
 }
 
 .navigation ul {
@@ -73,9 +77,45 @@ body {
   align-items: center;
   padding-left: 10px;
   height: 60px;
+  min-width: 230px;
   white-space: normal;
 }
 
 .navigation ul li.active {
   background-color: #ffffff;
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #4d5bf9;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle svg {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+}
+
+.toggle.active .close,
+.toggle .open {
+  display: block;
+}
+
+.toggle .close,
+.toggle.active .open {
+  display: none;
+}
+
+.toggle.active {
+  background-color: #ff4d89;
 }
