@@ -60,6 +60,7 @@ const MenuItemAnchorStyled = styled("a")<Pick<MenuItemProps, "active">>`
   width: 100%;
   text-decoration: none;
   overflow-x: hidden;
+  transition: 0.5s;
   color: #${({ active }) => (active ? "333333" : "ffffff")};
   ${({ active }) => (active ? "font-weight: 600" : "")};
 `;
