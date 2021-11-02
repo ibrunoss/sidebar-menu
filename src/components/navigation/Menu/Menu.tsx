@@ -11,15 +11,26 @@ const MenuStyled = styled("div")<MenuProps>`
   background-color: #4d5bf9;
   border-left: 10px solid #4d5bf9;
   transition: 0.5s;
-  overflow-x: hidden;
+`;
+
+const MenuContainerStyled = styled("ul")`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 `;
 interface MenuProps {
   open?: boolean;
+  children: React.ReactNode;
 }
 
 const Menu: React.FC<MenuProps> = (props) => {
-  const { open } = props;
-  return <MenuStyled open={open}>Menu</MenuStyled>;
+  const { open, children } = props;
+  return (
+    <MenuStyled open={open}>
+      <MenuContainerStyled>{children}</MenuContainerStyled>
+    </MenuStyled>
+  );
 };
 
 export default Menu;
