@@ -30,8 +30,6 @@ const MenuItemStyled = styled("li")<Pick<MenuItemProps, "active">>`
     border-radius: 10px;
     background-color: #${({ active }) => (active ? "ffffff;" : "3749ff")};
   }
-
-  ${({ active }) => (active ? "" : "")}
 `;
 
 const MenuItemIconStyled = styled("span")`
@@ -54,9 +52,10 @@ const MenuItemAnchorStyled = styled("a")<Pick<MenuItemProps, "active">>`
   width: 100%;
   text-decoration: none;
   overflow-x: hidden;
-  transition: 0.5s;
+  border-radius: 10px;
   color: #${({ active }) => (active ? "333333" : "ffffff")};
   ${({ active }) => (active ? "font-weight: 600" : "")};
+  ${({ active }) => (active ? "background-color: #ffffff;" : "")};
 `;
 
 const MenuItemLabelStyled = styled("span")`
