@@ -12,29 +12,23 @@ const MenuItemStyled = styled("li")<Pick<MenuItemProps, "active">>`
   position: relative;
   list-style: none;
   width: 100%;
-  margin-top: 20px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   ${({ active }) => (active ? "background-color: #ffffff;" : "")};
 
   &:hover {
-    background-color: #ffffff;
+    background-color: #${({ active }) => (active ? "ffffff;" : "3749ff")};
   }
 
   &:hover a {
-    color: #333333;
-    font-weight: 600;
     overflow-x: initial;
-  }
-
-  &:hover b {
-    display: block;
+    background-color: #${({ active }) => (active ? "ffffff;" : "3749ff")};
+    border-radius: 10px;
   }
 
   &:hover span {
-    background-color: #ffffff;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
+    background-color: #${({ active }) => (active ? "ffffff;" : "3749ff")};
   }
 
   ${({ active }) => (active ? "" : "")}
