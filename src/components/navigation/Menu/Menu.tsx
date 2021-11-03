@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 
 const MenuStyled = styled("div")<MenuProps>`
-  position: fixed;
+  position: absolute;
   box-sizing: initial;
   top: 20px;
   left: 20px;
-  bottom: 20px;
   width: ${({ open }) => (open ? "300px" : "60px")};
+  min-height: calc(100vh - 40px);
   border-radius: 10px;
   background-color: #4d5bf9;
   border-left: 10px solid #4d5bf9;
@@ -14,9 +14,6 @@ const MenuStyled = styled("div")<MenuProps>`
 `;
 
 const MenuContainerStyled = styled("ul")`
-  position: absolute;
-  top: 0;
-  left: 0;
   margin-top: 10px;
   width: 100%;
 `;
