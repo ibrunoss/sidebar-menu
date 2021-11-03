@@ -8,6 +8,7 @@ const IconButtonStyled = styled("button")`
   height: 50px;
   outline: none;
   background-color: #4d5bf9;
+  border: none;
   border-radius: 10px;
   cursor: pointer;
   color: #ffffff;
@@ -20,12 +21,17 @@ const IconButtonStyled = styled("button")`
 
 export interface IconButtonProps {
   icon: React.ReactElement;
+  className?: string;
   onClick?: (event: React.MouseEvent) => void;
 }
 
 const IconButton: React.FC<IconButtonProps> = (props) => {
-  const { icon, onClick } = props;
-  return <IconButtonStyled onClick={onClick}>{icon}</IconButtonStyled>;
+  const { icon, onClick, className } = props;
+  return (
+    <IconButtonStyled className={className} onClick={onClick}>
+      {icon}
+    </IconButtonStyled>
+  );
 };
 
 export default IconButton;
